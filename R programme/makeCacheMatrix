@@ -1,0 +1,56 @@
+
+R version 4.0.0 (2020-04-24) -- "Arbor Day"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> source("C:\\Users\\KOMAL\\Desktop\\R Program\\makeCacheMatrix.R")
+Error in source("C:\\Users\\KOMAL\\Desktop\\R Program\\makeCacheMatrix.R") : 
+  C:\Users\KOMAL\Desktop\R Program\makeCacheMatrix.R:1:29: unexpected '-'
+1: makeCacheMatrix<- function(x-
+                                ^
+> data<-read.csv(file.choose(), header=T)
+> data
+                   makeCacheMatrix...function.x.matrix.....
+1                                                 inv<-NULL
+2                                       set<- function(y) {
+3                                                    x<<- y
+4                                                inv<<-NULL
+5                                                         }
+6                                      get<- function() {x}
+7            setInverse<- function(inverse) {inv<<-inverse}
+8                             getInverse<- function() {inv}
+9                                              list(set=set
+10                                                  get=get
+11                                    setInverse=setInverse
+12                                   getInverse=getInverse)
+13                                                        }
+14                                  cachesolve<- function(x
+15                                                   ...) {
+16                                      inv<-x$getInverse()
+17                                      if(!is.null(inv)) {
+18                             message(getting cached data)
+19                                              return(inv)
+20                                                        }
+21                                            mat<- x$get()
+22                                          inv<- solve(mat
+23                                                     ...)
+24                                        x$setInverse(inv)
+25                                                      inv
+26                                                        }
+> 
